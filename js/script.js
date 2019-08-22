@@ -8,13 +8,27 @@ $(document).ready(function() {
  for(var i = 0; i<vowel.length; i++) {
     if(inputArray[0] === vowel[i]) {
         output = inputString + "way";
+     }
+   }
+   var outputArray = inputArray.slice(0);
+   for(var i = 0; i<inputArray.length; i++) {
+     var isVowel = false;
+     for(var j = 0; j<vowel.length; j++){
+       if(inputArray[i] === vowel[j]) {
+         isVowel = true;
+        }
+      }
+      if (!isVowel) {
+        var consonant = outputArray.shift();
+        outputArray.push(consonant);
+      }else {
+        break;
+      }
+   }
+    alert(outputArray);
 
-    }
-}
-//for(var i = 0; i < ranks.length; i++) {
-  // for(var j = 0; j < suits.length; j++) {
-    // cards.push(ranks[i] + " of " + suits[j]);
-   //}
+
+
 
 
 
